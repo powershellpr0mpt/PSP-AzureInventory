@@ -40,15 +40,14 @@ Task Build {
 
     # Update FunctionsToExport in Module Manifest for autoloading
     Write-Host "Update the Module Manifest FunctionsToExport for autoloading on build"  -ForegroundColor Blue
-    Set-ModuleFunctions -Name "$VersionFolder\$ModuleName"
+    Set-ModuleFunction -Name "$VersionFolder\$ModuleName"
 
     # Add custom Formats in Module Manifest when existing
-    if (Get-ChildItem -Path "$VersionFolder\$ModuleName\formats" -File *.format.ps1xml) {
+    if (Get-ChildItem -Path "$VersionFolder\$ModuleName\formats" -File *.format.ps1xml -ErrorAction SilentlyContinue) {
         Write-Host "Update the Module Manifest FormatsToExport for applying custom formats on cmdlets" -ForegroundColor Blue
-        Set-ModuleFormats -Name "$VersionFolder\$ModuleName" -FormatsRelativePath '.\formats'
+        Set-ModuleFormat -Name "$VersionFolder\$ModuleName" -FormatsRelativePath '.\formats'
     }
     
-
     # Verifying new module
     Write-Host "Module built, verifying module output" -ForegroundColor Blue
     Get-Module -ListAvailable "$VersionFolder\$ModuleName\$ModuleName.psd1" | ForEach-Object -Process {
