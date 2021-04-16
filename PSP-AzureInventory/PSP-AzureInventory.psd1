@@ -51,12 +51,7 @@ Description = 'Inventorize your Azure environment with ease'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(
-    "Az.Accounts",
-    "Az.Storage",
-    "Az.Compute",
-    "Az.Network"
-)
+# RequiredModules = @('Az.Accounts','Az.Storage','Az.Compute','Az.Network')
 
 # Assemblies that must be loaded prior to importing this module
 # RequiredAssemblies = @()
@@ -114,14 +109,6 @@ PrivateData = @{
         # ReleaseNotes of this module
         ReleaseNotes = 'https://github.com/powershellpr0mpt/PSP-AzureInventory/blob/master/CHANGELOG.md'
 
-        # Prerelease string of this module
-        # Prerelease = ''
-
-        # Flag to indicate whether the module requires explicit user acceptance for install/update/save
-        # RequireLicenseAcceptance = $false
-
-        # External dependent modules of this module
-        # ExternalModuleDependencies = @()
 
     } # End of PSData hashtable
 
@@ -134,5 +121,3 @@ PrivateData = @{
 # DefaultCommandPrefix = ''
 
 }
-
-

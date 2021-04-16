@@ -40,7 +40,7 @@ Task Build {
         Remove-Item -Path $ZipFolder/* -Recurse -Force
     }
 
-    Write-Host "Copying Module Manifest"  -ForegroundColor Blue
+    Write-Host "Copying Module Content to Build folder"  -ForegroundColor Blue
     $Null = Copy-Item -Path "$ProjectRoot\$ModuleName\" -Recurse -Destination $VersionFolder -Force
 
     Write-Host "Update the PSD1 FunctionsToExport for autoloading on build folder"  -ForegroundColor Blue
