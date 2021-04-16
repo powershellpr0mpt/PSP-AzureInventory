@@ -1,0 +1,46 @@
+# Starter pipeline
+
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- task: PowerShell@2
+  displayName: 'Install pre-requisites'
+  inputs:
+   targetType: 'inline'
+   script: |
+      Install-Module -Name Pester -MaximumVersion 4.99.99 -Verbose -Scope CurrentUser -SkipPublisherCheck -ErrorAction SilentlyContinue -Force
+      Install-Module -Name PSScriptAnalyzer -Verbose -Scope CurrentUser -SkipPublisherCheck -ErrorAction SilentlyContinue -Force
+      Install-Module -Name PSake -Verbose -Scope CurrentUser -SkipPublisherCheck -ErrorAction SilentlyContinue -Force
+      Install-Module -Name BuildHelpers -Verbose -Scope CurrentUser -SkipPublisherCheck -ErrorAction SilentlyContinue -Force
+      Install-Module -Name PSDeploy -Verbose -Scope CurrentUser -SkipPublisherCheck -ErrorAction SilentlyContinue -Force
+
+- task: PowerShell@2
+  displayName: 'run build'
+  inputs:
+    targetType: 'inline'
+    script: |
+      Set-BuildEnvironment
+      
+      Invoke-Psake -BuildFile .\psake.ps1 -Properties $PSBoundParameters -noLogo -taskList Default
+      
+      exit ( [int]( -not $psake.build_success ) )
+
+- task: CopyFiles@2
+  inputs:
+    SourceFolder: '$(System.DefaultWorkingDirectory)\_bin\PSP-AzureInventory'
+    Contents: '**'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)'
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'PSP-AzureInventory'
+    publishLocation: 'Container'
