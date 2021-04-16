@@ -1,4 +1,28 @@
 function Get-PspAzManagedDiskInfo {
+    <#
+    .SYNOPSIS
+    Gets Azure Virtual Machines' Managed Disk information
+    
+    .DESCRIPTION
+    Provides an easy overview of Virtual Machines' Managed Disk information.
+    Consolidating information from various sources in to one output
+    
+    .EXAMPLE
+    An example
+    
+    .NOTES
+    Name: Get-PspAzManagedDiskInfo.ps1
+    Author: Robert Prüst
+    Module: PSP-AzureInventory
+    DateCreated: 12-04-2021
+    DateModified: 16-04-2021
+    Blog: https://www.powershellpr0mpt.com
+
+    .LINK
+    https://www.powershellpr0mpt.com
+    #>
+    
+    [OutputType('PSP.Azure.Inventory.ManagedDisk')]
     [cmdletbinding()]
     param()
 

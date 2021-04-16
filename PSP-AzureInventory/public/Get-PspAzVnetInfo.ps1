@@ -1,4 +1,27 @@
 function Get-PspAzVnetInfo {
+    <#
+    .SYNOPSIS
+    Short description
+    
+    .DESCRIPTION
+    Long description
+    
+    .EXAMPLE
+    An example
+    
+    .NOTES
+    Name: Get-PspAzVnetInfo.ps1
+    Author: Robert Prüst
+    Module: PSP-AzureInventory
+    DateCreated: 12-04-2021
+    DateModified: 16-04-2021
+    Blog: https://www.powershellpr0mpt.com
+
+    .LINK
+    https://www.powershellpr0mpt.com
+    #>
+
+    [OutputType('PSP.Azure.Inventory.Vnet')]
     [cmdletbinding()]
     param()
 
