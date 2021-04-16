@@ -1,10 +1,9 @@
 function Get-PspAzVnetInfo {
-    #requires -Module AZ.Accounts,Az.Storage
     [cmdletbinding()]
     param()
 
     begin {
-        $Date = Get-Date #-Format yyyyMMdd-HHmm
+        $Date = Get-Date
 
         try {
             $VNets = Get-AzVirtualNetwork -ErrorAction Stop

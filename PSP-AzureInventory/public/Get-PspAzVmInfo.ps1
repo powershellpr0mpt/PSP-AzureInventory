@@ -1,10 +1,9 @@
 function Get-PspAzVmInfo {
-    #requires -Module AZ.Accounts,Az.Storage
     [cmdletbinding()]
     param()
 
     begin {
-        $Date = Get-Date #-Format yyyyMMdd-HHmm
+        $Date = Get-Date
 
         try {
             $VMs = Get-AzVM -Status -ErrorAction Stop

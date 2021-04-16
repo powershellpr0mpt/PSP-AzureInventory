@@ -51,7 +51,12 @@ Description = 'Inventorize your Azure environment with ease'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-# RequiredModules = @()
+RequiredModules = @(
+    "Az.Accounts",
+    "Az.Storage",
+    "Az.Compute",
+    "Az.Network"
+)
 
 # Assemblies that must be loaded prior to importing this module
 # RequiredAssemblies = @()

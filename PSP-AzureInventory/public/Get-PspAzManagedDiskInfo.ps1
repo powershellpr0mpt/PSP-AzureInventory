@@ -1,10 +1,9 @@
 function Get-PspAzManagedDiskInfo {
-    #requires -Module AZ.Accounts,Az.Compute
     [cmdletbinding()]
     param()
 
     begin {
-        $Date = Get-Date #-Format yyyyMMdd-HHmm
+        $Date = Get-Date
 
         try {
             $Disks = Get-AzDisk -ErrorAction Stop

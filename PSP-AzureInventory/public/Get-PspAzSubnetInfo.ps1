@@ -1,10 +1,9 @@
 function Get-PspAzSubnetInfo {
-    #requires -Module AZ.Accounts,Az.Network
     [cmdletbinding()]
     param()
 
     begin {
-        $Date = Get-Date #-Format yyyyMMdd-HHmm
+        $Date = Get-Date
 
         try {
             $VNets = Get-AzVirtualNetwork -ErrorAction Stop

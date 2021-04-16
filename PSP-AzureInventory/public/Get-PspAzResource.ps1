@@ -1,10 +1,9 @@
-function Get-PspAzPublicIpInfo {
-    #requires -Module AZ.Accounts,Az.Network
+function Get-PspAzResourceInfo {
     [cmdletbinding()]
     param()
 
     begin {
-        $Date = Get-Date #-Format yyyyMMdd-HHmm
+        $Date = Get-Date
 
         try {
             $Resources = Get-AzResource -ErrorAction Stop | Sort-Object ResourceGroupName, ResourceType, Name

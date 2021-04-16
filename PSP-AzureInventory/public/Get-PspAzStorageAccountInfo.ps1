@@ -1,10 +1,9 @@
 function Get-PspAzStorageAccountInfo {
-    #requires -Module AZ.Accounts,Az.Network
     [cmdletbinding()]
     param()
 
     begin {
-        $Date = Get-Date #-Format yyyyMMdd-HHmm
+        $Date = Get-Date
 
         try {
             $Storages = Get-AzStorageAccount -ErrorAction Stop
@@ -72,4 +71,3 @@ function Get-PspAzStorageAccountInfo {
         }
     }
 }
-

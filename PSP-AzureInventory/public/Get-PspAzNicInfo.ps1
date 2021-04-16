@@ -1,10 +1,9 @@
 function Get-PspAzNicInfo {
-    #requires -Module AZ.Accounts,Az.Network
     [cmdletbinding()]
     param()
 
     begin {
-        $Date = Get-Date #-Format yyyyMMdd-HHmm
+        $Date = Get-Date
 
         try {
             $Nics = Get-AzNetworkInterface -ErrorAction Stop
@@ -83,7 +82,4 @@ function Get-PspAzNicInfo {
             Write-Warning "Unable to continue"
         }
     }
-
-
-    # $ReportFile = "{2}\{0}-AzureHealthCheck-{1:yyyy}{1:MM}{1:dd}.xlsx" -f $CustomerName, $Date, $SaveFolder
 }

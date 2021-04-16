@@ -1,10 +1,9 @@
 function Get-PspAzUnmanagedDiskInfo {
-    #requires -Module AZ.Accounts,Az.Storage
     [cmdletbinding()]
     param()
 
     begin {
-        $Date = Get-Date #-Format yyyyMMdd-HHmm
+        $Date = Get-Date
 
         try {
             $Storages = Get-AzStorageAccount -ErrorAction Stop
@@ -59,4 +58,3 @@ function Get-PspAzUnmanagedDiskInfo {
         }
     }
 }
-
