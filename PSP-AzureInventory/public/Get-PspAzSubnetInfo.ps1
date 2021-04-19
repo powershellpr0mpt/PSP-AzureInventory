@@ -1,20 +1,52 @@
 function Get-PspAzSubnetInfo {
     <#
     .SYNOPSIS
-    Short description
+    Gets Azure Subnet information
     
     .DESCRIPTION
-    Long description
+    Provides an easy overview of Subnet information.
+    Consolidating information from various sources in to one output, such as VNet, DNS Server, NSG and more
     
     .EXAMPLE
-    An example
+    C:\temp>Get-PspAzSubnetInfo
+
+    SubnetName         ResourceGroupName VNet    AddressPrefix NsgOnSubnet
+    ----------         ----------------- ----    ------------- -----------
+    default            PSP-Networking    MyVNET  10.2.0.0/24   False
+    Backend            PSP-Networking    VM-VNet 10.1.0.0/24   True
+    azurebastionsubnet PSP-Networking    VM-VNet 10.1.1.0/27   False
     
+    Gets all Subnets for the currently connected subscription and displays the default properties
+
+    .EXAMPLE
+    C:\temp>Get-PspAzSubnetInfo | Format-List
+
+    SubnetName              : Backend
+    VNet                    : VM-VNet
+    VNetResourceGroup       : PSP-Networking
+    VnetDnsServer           : Azure Managed DNS
+    AddressPrefix           : 10.1.0.0/24
+    NsgOnSubnet             : True
+    SubnetNsg               : PSP-NSG_Backend
+    SubnetNsgResourceGroup  : PSP-Networking
+    RouteTableEnabled       : False
+    RouteTableName          :
+    RouteTableResourceGroup :
+    ServiceEndpoints        :
+    PrivateEndpoints        :
+    Location                : westeurope
+    Subscription            : 1a2b3c4d-1234-5678-9101-5e6f7g8h9i0k
+    ResourceGuid            : 1a2b3c4d-1234-5678-9101-5e6f7g8h9i0k
+    ReportDateTime          : 2021-04-19 13-37
+
+    Gets all Subnets for the currently connected subscription and displays the full properties
+
     .NOTES
     Name: Get-PspAzSubnetInfo.ps1
     Author: Robert Prüst
     Module: PSP-AzureInventory
     DateCreated: 12-04-2021
-    DateModified: 16-04-2021
+    DateModified: 19-04-2021
     Blog: https://www.powershellpr0mpt.com
 
     .LINK

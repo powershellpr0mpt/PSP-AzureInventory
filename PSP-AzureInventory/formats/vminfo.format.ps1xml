@@ -35,7 +35,7 @@
             <Alignment>left</Alignment>
           </TableColumnHeader>
           <TableColumnHeader>
-            <Label>PrivateIp</Label>
+            <Label>PrivateIpAddress</Label>
             <Width>19</Width>
             <Alignment>left</Alignment>
           </TableColumnHeader>
@@ -59,7 +59,7 @@
                 <PropertyName>HighlyAvailable</PropertyName>
               </TableColumnItem>
               <TableColumnItem>
-                <PropertyName>PrivateIp</PropertyName>
+                <PropertyName>PrivateIpAddress</PropertyName>
               </TableColumnItem>
             </TableColumnItems>
           </TableRowEntry>

@@ -1,13 +1,43 @@
 function Get-PspAzPeeringInfo {
     <#
     .SYNOPSIS
-    Short description
+    Gets Azure Virtual Network Peering information
     
     .DESCRIPTION
-    Long description
+    Provides an easy overview of Virtual Network Peering information.
+    Consolidating information from various sources in to one output, such as Local and Remote VNet, if it's Orphaned, Peering state and more
     
     .EXAMPLE
-    An example
+    C:\temp>Get-PspAzPeeringInfo
+
+    PeeringName         ResourceGroupName  PeeringState LocalVNet   RemoteVNet             Orphaned
+    -----------         -----------------  ------------ ---------   ----------             --------
+    vNetPeerToFortigate RG-PRD-PSP-NET      Initiated   vnPSPWEUPRD FortigateProtectedVNet True
+
+    Gets all Virtual Network Peering for the currently connected subscription and displays the default properties
+
+    .EXAMPLE
+    C:\temp>Get-PspAzPeeringInfo | Format-List
+
+    PeeringName               : vNetPeerToFortigate
+    PeeringState              : Initiated
+    LocalVNet                 : vnPSPWEUPRD
+    LocalVNetResourceGroup    : RG-PRD-PSP-NET
+    RemoteVNet                : FortigateProtectedVNet
+    RemoteVNetResourceGroup   : RG-PRD-PSP-VPN
+    RemoteVNetAddressSpace    : 10.0.0.0/16
+    Orphaned                  : True
+    UseRemoteGateways         : False
+    RemoteGateways            :
+    AllowGatewayTransit       : False
+    AllowVirtualNetworkAccess : True
+    AllowForwardedTraffic     : True
+    Location                  : westeurope
+    Subscription              : 1a2b3c4d-1234-5678-9101-5e6f7g8h9i0k
+    ResourceGuid              : 1a2b3c4d-1234-5678-9101-5e6f7g8h9i0k
+    ReportDateTime            : 2021-04-19 13-37
+
+    Gets all Virtual Network Peering for the currently connected subscription and displays the full properties
     
     .NOTES
     Name: Get-PspAzPeeringInfo.ps1

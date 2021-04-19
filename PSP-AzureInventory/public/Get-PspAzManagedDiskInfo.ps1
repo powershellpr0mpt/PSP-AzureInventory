@@ -5,17 +5,59 @@ function Get-PspAzManagedDiskInfo {
     
     .DESCRIPTION
     Provides an easy overview of Virtual Machines' Managed Disk information.
-    Consolidating information from various sources in to one output
+    Consolidating information from various sources in to one output, such as LinkedVM, if it's Orphaned, Operating System information and more
     
     .EXAMPLE
-    An example
+    C:\temp>Get-PspAzManagedDiskInfo
+
+    DiskName                                                   ResourceGroupName               State      LinkedVM         DiskSizeGB Orphaned
+    --------                                                   -----------------               -----      --------         ---------- --------
+    fs03_Cloned_E_L                                            RG-PRD-PSP-APP              Attached       vmPSPweuprdfs03  4096       False
+    vmpspweuprdah03-c                                          RG-PRD-PSP-APP              Attached       vmPSPweuprdah03  127        False
+    vmpspweuprdah03-e                                          RG-PRD-PSP-APP              Attached       vmPSPweuprdah03  512        False
+    vmpspweuprddp01-c                                          RG-PRD-PSP-APP              Attached       vmPSPweuprddp01  127        False
+    vmpspweuprddp01-e                                          RG-PRD-PSP-APP              Attached       vmPSPweuprddp01  64         False
+    vmpspweuprdep01_e                                          RG-PRD-PSP-APP              Attached       vmPSPweuprdep01  128        False
+    goldimage_disk1_406c6669ceae41da836c54b15330ed76           RG-PRD-PSP-RDS              Reserved       goldimage        128        False
+    vmpspimage01_disk1_a4fd1f8fded84ea89a46b2982a64431f        RG-PRD-PSP-RDS              Unattached                      128        True
+
+    Gets all Managed VM disks for the currently connected subscription and displays the default properties
+
+    .EXAMPLE
+    C:\temp>Get-PspAzManagedDiskInfo | Format-List
+
+    DiskName              : vmpspweuprdmg03_OsDisk_1_74de628bd07c44c78af49269f67348d2
+    ResourceGroupName     : RG-PRD-PSP-APP
+    State                 : Attached
+    DiskSizeGB            : 127
+    LinkedVM              : vmpspweuprdmg03
+    LinkedVMResourceGroup : RG-PRD-PSP-APP
+    Orphaned              : False
+    CreateOption          : FromImage
+    OSDisk                : True
+    OSFamily              : Windows
+    OSOffer               : WindowsServer
+    OSSku                 : 2019-Datacenter
+    SourceDisk            :
+    Encryption            : EncryptionAtRestWithPlatformKey
+    IopsRW                : 500
+    MpsRW                 : 100
+    HyperVGen             : V1
+    TagsAvailable         : False
+    Tags                  : env=demo;createdby=ARM
+    Location              : westeurope
+    Subscription          : 1a2b3c4d-1234-5678-9101-5e6f7g8h9i0k
+    ResourceGuid          : 1a2b3c4d-1234-5678-9101-5e6f7g8h9i0k
+    ReportDateTime        : 2021-04-19 13-37
+
+    Gets all Managed VM disks for the currently connected subscription and displays the full properties
     
     .NOTES
     Name: Get-PspAzManagedDiskInfo.ps1
     Author: Robert Prüst
     Module: PSP-AzureInventory
     DateCreated: 12-04-2021
-    DateModified: 16-04-2021
+    DateModified: 19-04-2021
     Blog: https://www.powershellpr0mpt.com
 
     .LINK

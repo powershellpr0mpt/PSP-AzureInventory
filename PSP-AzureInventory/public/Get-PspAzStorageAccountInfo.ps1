@@ -1,20 +1,56 @@
 function Get-PspAzStorageAccountInfo {
     <#
     .SYNOPSIS
-    Short description
+    Gets Storage Account information
     
     .DESCRIPTION
-    Long description
+    Provides an easy overview of Storage Account information.
+    Consolidating information from various sources in to one output, such as ResourceType, if it's an Azure RM or Classic object and more
     
     .EXAMPLE
-    An example
+    C:\temp>Get-PspAzStorageAccountInfo
+
+    StorageAccountName    ResourceGroupName      Kind      Replication  EnableHttpsTrafficOnly StaticWebsites
+    ------------------    -----------------      ----      -----------  ---------------------- --------------
+    pspcloudshell         PSP-CoreInfrastructure StorageV2 Standard_LRS True                   False
+    pspeventlogstorage001 PSP-LogAnalytics       StorageV2 Standard_LRS True                   False
+    pspsynology           PSP-CoreInfrastructure StorageV2 Standard_LRS True                   False
+    pspvmsstorage001      PSP-VMs                StorageV2 Standard_LRS True                   False
+    pspwebsite            PSP-Website            StorageV2 Standard_LRS True                   True
+
+    Gets all Storage Accounts for the currently connected subscription and displays the default properties
+
+    .EXAMPLE
+    C:\temp>Get-PspAzStorageAccountInfo | Format-List
+
+    StorageAccountName     : pspwebsite
+    ResourceGroupName      : PSP-Website
+    Kind                   : StorageV2
+    Replication            : Standard_LRS
+    AccessTier             : Hot
+    EnableHttpsTrafficOnly : True
+    EncryptedBlob          : True
+    EncryptedFile          : True
+    ContainersUsed         : True
+    PublicContainers       : False
+    PublicContainersInfo   :
+    StaticWebsites         : True
+    FileSharesUsed         : False
+    LargeFileShares        : True
+    TagsAvailable          : False
+    Tags                   : env=demo;createdby=ARM
+    Location               : westeurope
+    Subscription           : 1a2b3c4d-1234-5678-9101-5e6f7g8h9i0k
+    ReportDateTime         : 2021-04-19 13-37
+
+    Gets all Storage Accounts for the currently connected subscription and displays the full properties
     
     .NOTES
     Name: Get-PspAzStorageAccountInfo.ps1
     Author: Robert Prüst
     Module: PSP-AzureInventory
     DateCreated: 12-04-2021
-    DateModified: 16-04-2021
+    DateModified: 19-04-2021
     Blog: https://www.powershellpr0mpt.com
 
     .LINK

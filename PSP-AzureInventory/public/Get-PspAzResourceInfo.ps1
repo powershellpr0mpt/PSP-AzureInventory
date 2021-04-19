@@ -1,13 +1,38 @@
 function Get-PspAzResourceInfo {
     <#
     .SYNOPSIS
-    Short description
+    Gets Azure Resource information
     
     .DESCRIPTION
-    Long description
+    Provides an easy overview of Azure Resource information.
+    Consolidating information from various sources in to one output, such as ResourceType, if it's an Azure RM or Classic object and more
     
     .EXAMPLE
-    An example
+    C:\temp>Get-PspAzResourceInfo
+
+    ResourceName                                                                           ResourceGroupName        ResourceType                                           AzureClassic Location
+    ------------                                                                           -----------------        ------------                                           ------------ --------
+    DefaultWorkspace-1a2b3c4d-1234-5678-9101-5e6f7g8h9i0k-WEU                              DefaultResourceGroup-WEU Microsoft.OperationalInsights/workspaces               False        westeurope
+    Security(DefaultWorkspace-1a2b3c4d-1234-5678-9101-5e6f7g8h9i0k-WEU)                    defaultresourcegroup-weu Microsoft.OperationsManagement/solutions               False        westeurope
+    NetworkWatcher_westeurope                                                              NetworkWatcherRG         Microsoft.Network/networkWatchers                      False        westeurope
+    PSP-Automation                                                                         PSP-Automation           Microsoft.Automation/automationAccounts                False        westeurope
+    Alert ServiceDesk                                                                      PSP-LogAnalytics         Microsoft.Insights/actiongroups                        False        global
+
+    Gets all Azure Resource objects for the currently connected subscription and displays the default properties
+
+    .EXAMPLE
+    C:\temp>Get-PspAzResourceInfo | Format-List
+
+    ResourceName      : MyVNET
+    ResourceGroupName : PSP-Networking
+    ResourceType      : Microsoft.Network/virtualNetworks
+    AzureClassic      : False
+    Location          : westeurope
+    Subscription      : 1a2b3c4d-1234-5678-9101-5e6f7g8h9i0k
+    ReportDateTime    : 2021-04-19 13-37
+
+    Gets all Azure Resource objects for the currently connected subscription and displays the full properties
+
     
     .NOTES
     Name: Get-PspAzResourceInfo.ps1
