@@ -35,7 +35,7 @@
             <Alignment>left</Alignment>
           </TableColumnHeader>
           <TableColumnHeader>
-            <Label>PrivateIpAddress</Label>
+            <Label>PrivateIp</Label>
             <Width>19</Width>
             <Alignment>left</Alignment>
           </TableColumnHeader>

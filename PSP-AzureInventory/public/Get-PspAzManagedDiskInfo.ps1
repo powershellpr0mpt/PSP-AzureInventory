@@ -10,23 +10,23 @@ function Get-PspAzManagedDiskInfo {
     .EXAMPLE
     C:\temp>Get-PspAzManagedDiskInfo
 
-    DiskName                                                   ResourceGroupName               State      LinkedVM         DiskSizeGB Orphaned
-    --------                                                   -----------------               -----      --------         ---------- --------
-    fs03_Cloned_E_L                                            RG-PRD-PSP-APP              Attached       vmPSPweuprdfs03  4096       False
-    vmpspweuprdah03-c                                          RG-PRD-PSP-APP              Attached       vmPSPweuprdah03  127        False
-    vmpspweuprdah03-e                                          RG-PRD-PSP-APP              Attached       vmPSPweuprdah03  512        False
-    vmpspweuprddp01-c                                          RG-PRD-PSP-APP              Attached       vmPSPweuprddp01  127        False
-    vmpspweuprddp01-e                                          RG-PRD-PSP-APP              Attached       vmPSPweuprddp01  64         False
-    vmpspweuprdep01_e                                          RG-PRD-PSP-APP              Attached       vmPSPweuprdep01  128        False
-    goldimage_disk1_406c6669ceae41da836c54b15330ed76           RG-PRD-PSP-RDS              Reserved       goldimage        128        False
-    vmpspimage01_disk1_a4fd1f8fded84ea89a46b2982a64431f        RG-PRD-PSP-RDS              Unattached                      128        True
+    DiskName                  ResourceGroupName       State          LinkedVM         DiskSizeGB Orphaned
+    --------                  -----------------       -----          --------         ---------- --------
+    fs03_Cloned_E_L           RG-PRD-PSP-APP          Attached       vmPSPweuprdfs03  4096       False
+    vmpspweuprdah03-c         RG-PRD-PSP-APP          Attached       vmPSPweuprdah03  127        False
+    vmpspweuprdah03-e         RG-PRD-PSP-APP          Attached       vmPSPweuprdah03  512        False
+    vmpspweuprddp01-c         RG-PRD-PSP-APP          Attached       vmPSPweuprddp01  127        False
+    vmpspweuprddp01-e         RG-PRD-PSP-APP          Attached       vmPSPweuprddp01  64         False
+    vmpspweuprdep01_e         RG-PRD-PSP-APP          Attached       vmPSPweuprdep01  128        False
+    goldimage_disk1           RG-PRD-PSP-RDS          Reserved       goldimage        128        False
+    vmpspimage01_disk1        RG-PRD-PSP-RDS          Unattached                      128        True
 
     Gets all Managed VM disks for the currently connected subscription and displays the default properties
 
     .EXAMPLE
     C:\temp>Get-PspAzManagedDiskInfo | Format-List
 
-    DiskName              : vmpspweuprdmg03_OsDisk_1_74de628bd07c44c78af49269f67348d2
+    DiskName              : vmpspweuprdmg03_OsDisk_1
     ResourceGroupName     : RG-PRD-PSP-APP
     State                 : Attached
     DiskSizeGB            : 127

@@ -10,11 +10,11 @@ function Get-PspAzVmScaleSetInfo {
     .EXAMPLE
     C:\temp>Get-PspAzVmScaleSetInfo
 
-    VMName           ResourceGroupName               Size             PowerState             HighlyAvailable PrivateIp
-    ------           -----------------               ----             ----------             --------------- ---------
-    vmpspweuprdah01  RG-PRD-PSP-APP                  Standard_A2m_v2  VM deallocated         True            10.0.1.5
-    vmpspweuprdah02  RG-PRD-PSP-APP                  Standard_A2m_v2  Provisioning succeeded False           10.0.1.6
-    vmpspweuprdah03  RG-PRD-PSP-APP                  Standard_D4s_v3  VM running             True            10.0.1.7
+    VMName           ResourceGroupName     Size             PowerState             HighlyAvailable PrivateIp
+    ------           -----------------     ----             ----------             --------------- ---------
+    vmpspweuprdah01  RG-PRD-PSP-APP        Standard_A2m_v2  VM deallocated         True            10.0.1.5
+    vmpspweuprdah02  RG-PRD-PSP-APP        Standard_A2m_v2  Provisioning succeeded False           10.0.1.6
+    vmpspweuprdah03  RG-PRD-PSP-APP        Standard_D4s_v3  VM running             True            10.0.1.7
 
     Gets all Scale Set Virtual Machines for the currently connected subscription and displays the default properties
 

@@ -10,13 +10,13 @@ function Get-PspAzResourceInfo {
     .EXAMPLE
     C:\temp>Get-PspAzResourceInfo
 
-    ResourceName                                                                           ResourceGroupName        ResourceType                                           AzureClassic Location
-    ------------                                                                           -----------------        ------------                                           ------------ --------
-    DefaultWorkspace-1a2b3c4d-1234-5678-9101-5e6f7g8h9i0k-WEU                              DefaultResourceGroup-WEU Microsoft.OperationalInsights/workspaces               False        westeurope
-    Security(DefaultWorkspace-1a2b3c4d-1234-5678-9101-5e6f7g8h9i0k-WEU)                    defaultresourcegroup-weu Microsoft.OperationsManagement/solutions               False        westeurope
-    NetworkWatcher_westeurope                                                              NetworkWatcherRG         Microsoft.Network/networkWatchers                      False        westeurope
-    PSP-Automation                                                                         PSP-Automation           Microsoft.Automation/automationAccounts                False        westeurope
-    Alert ServiceDesk                                                                      PSP-LogAnalytics         Microsoft.Insights/actiongroups                        False        global
+    ResourceName                    ResourceGroupName        ResourceType                                 AzureClassic Location
+    ------------                    -----------------        ------------                                 ------------ --------
+    DefaultWorkspace-WEU            DefaultResourceGroup-WEU Microsoft.OperationalInsights/workspaces     False        westeurope
+    Security(DefaultWorkspace-WEU)  defaultresourcegroup-weu Microsoft.OperationsManagement/solutions     False        westeurope
+    NetworkWatcher_westeurope       NetworkWatcherRG         Microsoft.Network/networkWatchers            False        westeurope
+    PSP-Automation                  PSP-Automation           Microsoft.Automation/automationAccounts      False        westeurope
+    Alert ServiceDesk               PSP-LogAnalytics         Microsoft.Insights/actiongroups              False        global
 
     Gets all Azure Resource objects for the currently connected subscription and displays the default properties
 
@@ -39,7 +39,7 @@ function Get-PspAzResourceInfo {
     Author: Robert Prüst
     Module: PSP-AzureInventory
     DateCreated: 12-04-2021
-    DateModified: 16-04-2021
+    DateModified: 19-04-2021
     Blog: https://www.powershellpr0mpt.com
 
     .LINK

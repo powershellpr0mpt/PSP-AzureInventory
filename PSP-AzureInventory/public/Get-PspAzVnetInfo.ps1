@@ -10,7 +10,7 @@ function Get-PspAzVnetInfo {
     .EXAMPLE
     C:\temp>Get-PspAzVnetInfo
 
-        VNetName ResourceGroupName AddressSpace Subnets                    VNetDnsServer
+    VNetName ResourceGroupName AddressSpace Subnets                    VNetDnsServer
     -------- ----------------- ------------ -------                    -------------
     MyVNET   PSP-Networking    10.2.0.0/16  default                    Azure Managed DNS
     VM-VNet  PSP-Networking    10.1.0.0/16  Backend;azurebastionsubnet Azure Managed DNS
@@ -25,7 +25,7 @@ function Get-PspAzVnetInfo {
     AddressSpace      : 10.31.0.0/20
     VnetDnsServer     : 10.31.4.4;10.31.4.5
     DdosProtection    : Basic
-    Subnets           : SNWEUPRDAppGateway;GatewaySubnet;Meraki;SNWEUPRDRemoteDesktopServices;SNWEUPRDApplication;SNWEUPRDBackEndDMZ;SNWEUPRDIdentity;SNWEUPRDData;SNWEUPRDFrontEndDMZ
+    Subnets           : SNWEUPRDAppGateway;GatewaySubnet
     PeeringEnabled    : True
     Peerings          : vNetPeerToFortigate
     TagsAvailable     : False

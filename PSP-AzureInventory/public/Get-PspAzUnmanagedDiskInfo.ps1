@@ -10,12 +10,12 @@ function Get-PspAzUnmanagedDiskInfo {
     .EXAMPLE
     C:\temp>Get-PspAzUnmanagedDiskInfo
 
-    VhdName                                                                                                ResourceGroupName   StorageAccount           DiskSizeGB Orphaned IsSnapshot
-    -------                                                                                                -----------------   --------------           ---------- -------- ----------
-    vmpspweuprdah02-e.vhd                                                                                  rg-prd-psp-data     salrspspweuprddatadisk01 1023       False    True
-    ANSVHR203-disk2.vhd                                                                                    rg-prd-psp-data     salrspspweuprdosdisk01   75         False    True
-    ANSVHR203-disk2.vhd                                                                                    rg-prd-psp-data     salrspspweuprdosdisk01   75         False    False
-    vmpspweuprdah02-c.vhd                                                                                  rg-prd-psp-data     salrspspweuprdosdisk01   127        False    True
+    VhdName                   ResourceGroupName   StorageAccount           DiskSizeGB Orphaned IsSnapshot
+    -------                   -----------------   --------------           ---------- -------- ----------
+    vmpspweuprdah02-e.vhd     rg-prd-psp-data     salrspspweuprddatadisk01 1023       False    True
+    ANSVHR203-disk2.vhd       rg-prd-psp-data     salrspspweuprdosdisk01   75         False    True
+    ANSVHR203-disk2.vhd       rg-prd-psp-data     salrspspweuprdosdisk01   75         False    False
+    vmpspweuprdah02-c.vhd     rg-prd-psp-data     salrspspweuprdosdisk01   127        False    True
 
     Gets all Unmanaged Disks (VHD) for the currently connected subscription and displays the default properties
 

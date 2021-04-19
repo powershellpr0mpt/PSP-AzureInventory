@@ -10,13 +10,13 @@ function Get-PspAzPublicIpInfo {
     .EXAMPLE
     C:\temp>Get-PspAzPublicIpInfo
 
-    PublicIpName        ResourceGroupName               IpAddress     Orphaned LinkedResourceName  IpAllocationMethod
-    ------------        -----------------               ---------     -------- ------------------  ------------------
-    vmpspweuprddm03-pip RG-PRD-PSP-APP                  12.34.56.78   False    vmpspweuprddm03-nic Static
-    vmpspweuprdim02_pip RG-PRD-PSP-APP                  12.34.56.79   False    vmpspweuprdim02986  Static
-    vmpspweuprdpx01-pip RG-PRD-PSP-APP                  12.34.56.80   False    vmpspweuprdpx0187   Static
-    utvb3bgdh3ebwIP     RG-PRD-PSP-MERzlbhrdtfyqobi     12.34.56.81   False    vmpspweuprdmer01Nic Dynamic
-    vmpspweuprdmg02-pip RG-PRD-PSP-MGM                  12.34.56.82   False    vmpspweuprdmg02-nic Static
+    PublicIpName        ResourceGroupName      IpAddress     Orphaned LinkedResourceName  IpAllocationMethod
+    ------------        -----------------      ---------     -------- ------------------  ------------------
+    vmpspweuprddm03-pip RG-PRD-PSP-APP         12.34.56.78   False    vmpspweuprddm03-nic Static
+    vmpspweuprdim02_pip RG-PRD-PSP-APP         12.34.56.79   False    vmpspweuprdim02986  Static
+    vmpspweuprdpx01-pip RG-PRD-PSP-APP         12.34.56.80   False    vmpspweuprdpx0187   Static
+    utvb3bgdh3ebwIP     RG-PRD-PSP-MER         12.34.56.81   False    vmpspweuprdmer01Nic Dynamic
+    vmpspweuprdmg02-pip RG-PRD-PSP-MGM         12.34.56.82   False    vmpspweuprdmg02-nic Static
 
     Gets all Public IP Address objects for the currently connected subscription and displays the default properties
 
