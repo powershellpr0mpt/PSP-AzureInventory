@@ -44,7 +44,7 @@ function Get-PspAzPeeringInfo {
     Author: Robert Prüst
     Module: PSP-AzureInventory
     DateCreated: 12-04-2021
-    DateModified: 16-04-2021
+    DateModified: 19-04-2021
     Blog: https://www.powershellpr0mpt.com
 
     .LINK
