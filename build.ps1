@@ -5,7 +5,7 @@ param(
 )
 
 Write-Host "Importing Modules:" -ForegroundColor Yellow
-$Modules = @('Psake', 'BuildHelpers', 'Pester', 'PSScriptAnalyzer', 'PSDeploy', 'platyPs')
+$Modules = @('Psake', 'BuildHelpers', 'Pester', 'PSScriptAnalyzer', 'PSDeploy')
 
 
 function Resolve-Module {

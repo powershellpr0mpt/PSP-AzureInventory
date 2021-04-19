@@ -7,7 +7,6 @@ Properties {
     $ModuleVersion = (Get-Module -ListAvailable $env:BHPSModuleManifest).Version
     $BuildFolder = "$ProjectRoot\_bin\$ModuleName"
     $VersionFolder = "$BuildFolder\$ModuleVersion"
-    $DocsFolder = "$VersionFolder\$ModuleName\docs"
 }
 
 Task default -Depends Build
@@ -70,15 +69,6 @@ Task Build {
         Write-Output "ExportedAliases   : $ExportedAliases"
         Write-Output "ExportedVariables : $ExportedVariables"
     }
-
-        # Build help files through platyPs
-        if (-not (Get-ChildItem -Path "$VersionFolder\$ModuleName\docs" -File *.md -ErrorAction SilentlyContinue)) {
-        Write-Host "Building external help files through platyPs" -ForegroundColor Blue
-        New-MarkdownHelp -Module $ModuleName -OutputFolder $DocsFolder
-        New-ExternalHelp -Path $DocsFolder -OutputPath "$VersionFolder\$ModuleName\en-US" -Force
-        } else {
-            Update-MarkdownHelpModule -Path $DocsFolder -RefreshModulePage
-        }
 }
 
 Task Analyze -Depends Build {

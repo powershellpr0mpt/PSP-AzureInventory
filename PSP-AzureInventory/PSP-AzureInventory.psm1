@@ -6,7 +6,7 @@
 
         Name: PSP-AzureInventory
         Author: Robert Prust
-        Version: 0.1.0
+        Version: 0.9.0
         Blog: http://powershellpr0mpt.com
 
     .LINK
